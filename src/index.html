@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAFT - NFT Marketplace</title>
+    <link rel="icon" type="image/x-icon" href="/icon/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <link rel="stylesheet" href="/dist/output.css">
+</head>
+
+<body class="bg-black text-white">
+    <nav class="lg:px-10 px-4 pt-8 pb-4 text-white items-center border-b-2 border-bott bg-black shadow md:flex md:items-center md:justify-between">
+        <div class="flex justify-between items-center ">
+            <a href="#" class="flex items-center">
+                <img src="/icon/favicon.ico" class="h-10 w-30" alt="NAFT Logo"/>
+                <span class="text-3xl font-bold">NAFT</span>
+            </a>    
+            <span class="text-3xl cursor-pointer  md:hidden block">               
+                <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
+            </span>
+        </div>
+        
+        <ul class="md:flex md:items-center z-[0] md:z-auto md:static absolute bg-black w-full text-center md:w-auto md:py-0 py-8 md:pl-0 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500 left-0 h-fit">
+                <li class="my-4">
+                <a href="#"  class=" rounded-lg p-3 py-2 mx-2 border-b-2  border-gold hover:font-medium" >Home</a>
+                </li>
+                <li class="my-4">
+                <a href="#"  class=" rounded-lg p-3 py-2 mx-2  get hover:font-medium">About</a>
+                </li>
+                <li class="my-3">
+                <a href="#"  class=" rounded-lg p-3 py-2 mx-2  get  hover:font-medium">Explore</a>
+                </li>
+                <li class="my-3">
+                <a href="#"  class=" rounded-lg p-3 py-2 mx-2  get hover:font-medium">Creators</a>
+                </li>
+                <li class="my-3">
+                <a href="#"  class=" rounded-lg p-3 py-2 mx-2  get hover:font-medium">Collections</a>
+                </li>
+                <li class="my-3">
+                <a href="#" class=" rounded-lg p-3 py-2 mx-2  get hover:font-medium">Blog</a>
+                </li>
+                <li class="my-3">
+                <a href="#" class=" rounded-lg p-3 py-2 mx-2  get hover:font-medium">Contact</a>
+                </li>   
+                <input type="search" label="search" name="search" placeholder="Search" class="hidden md:block search rounded-lg border-bott border-2  w-36 p-2 h-14">  
+                <button type="button" class=" rounded-lg border-x-2 border-gold border-y-2 p-3 m-2 px-5 get hover:font-medium">SIGN IN</button>
+        </ul>        
+      </nav>
+        
+    <main>
+        <section class="flex lg:flex-row flex-col-reverse p-8 mb-10 m-4 items-center justify-center">
+            <div class="flex flex-col px-5">
+                <span class="hover:text-cyan text-5xl font-bold my-3">Discover Digital Art Sell Your Specific</span>
+                <span class="highlight my-3">NFT</span>
+                <span class="text-lg hover:text-gold">Partner with one of the world’s largest retailers to showcase your brand and
+                    products.</span>
+                <div class="flex flex-row justify-center my-4">
+                    <button class="mx-1  rounded-lg border-x-2 border-gold border-y-2 p-3 m-2 px-5 get hover:font-medium">EXPLORE MORE</button>
+                    <button class="mx-1  rounded-lg border-x-2 border-gold border-y-2 p-3 m-2 px-5 get hover:font-medium">CREATE NOW</button>
+                </div>
+            </div>
+            <div><img class="rounded-full object-cover border-x-8 border-y-8 border-border" src="/images/hero-banner.jpg" alt=""></div>
+        </section>
+        <section class="w-full h-auto bg-border pb-24">
+            <div class="py-20 px-24 flex flex-col sm:flex-row justify-between">
+                <span class="text-4xl font-bold text-center">Newest Items</span>
+                <button type="button" class="border-gold border-y-2 border-x-2 py-3 px-4 rounded-lg hover:bg-gold hover:text-black font-medium m-2">VIEW ALL</button>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 px-20 sm:px-36 py-4">
+                <div class="text-bidtxt border-cardbord border-x-2 border-y-2 bg-card h-fit w-fit p-5 py-4 rounded-md relative bid mb-3 mr-2">
+                    <img class="h-52 w-52 object-cover sm:ml-2 rounded-lg"  src="/images/item-bg-1.jpg" alt="">
+                    <div class="absolute flex flex-col p-2 sm:px-4 top-6 items-center">
+                        <div class="flex flex-row justify-around items-center">
+                            <ion-icon class="bg-transparent h-7 w-7 fill-gold rounded-full border-gold border-x-0 border-y-0" name="ellipsis-horizontal-circle-sharp"></ion-icon>
+                            <ion-icon class="ml-24 sm:ml-16 md:ml-32 border-bott rounded-full border-x-8 border-y-8 bg-bott hover:fill-red-600 heart"  name="heart"></ion-icon></div>
+                        <button class="mt-14 border-x-2 border-y-2 p-2 bg-gold border-gold text-gray-700 opacity-0 place rounded-lg">Place Bid</button>
+                    </div>
+                    
+                    <span class="items-center font-medium">Dimond riding a blue body art</span>
+                    <div>
+                        <div class="flex flex-row justify-between my-4 items-center bid">                            
+                            <div class="flex flex-col sm:flex-row">
+                                <img class="bg-black rounded-full w-9 h-9" src="/images/bidding-user.png" alt="">
+                                <div class="flex flex-col sm:ml-2">
+                                    <span class="text-sm font-bold">JackR</span>      
+                                    <span class="text-sm">&#64;jackr</span>  
+                                </div>                        
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-sm font-bold">0.568ETH</span>
+                                <span class="text-sm">Current Bid</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-row justify-between items-center bid">
+                        <span class="text-sm">12+ Place Bid.</span>
+                        <button class="border-gold  p-1 px-2 rounded-md bg-gold text-black font-normal text-sm">New</button>
+                    </div>
+                </div>
+                <div class="text-bidtxt border-cardbord border-x-2 border-y-2 bg-card h-fit w-fit p-5 py-4 rounded-md relative bid mb-3 mr-2">
+                    <img class="h-52 w-52 object-cover sm:ml-2 rounded-lg"  src="/images/item-bg-2.jpg" alt="">
+                    <div class="absolute flex flex-col p-2 sm:px-4 top-6 items-center">
+                        <div class="flex flex-row justify-around items-center">
+                            <ion-icon class="bg-transparent h-7 w-7 fill-gold rounded-full border-gold border-x-0 border-y-0" name="ellipsis-horizontal-circle-sharp"></ion-icon>
+                            <ion-icon class="ml-24 sm:ml-16 md:ml-32 border-bott rounded-full border-x-8 border-y-8 bg-bott hover:fill-red-600 heart"  name="heart"></ion-icon></div>
+                        <button class="mt-14 border-x-2 border-y-2 p-2 bg-gold border-gold text-gray-700 opacity-0 place rounded-lg">Place Bid</button>
+                    </div>
+                    
+                    <span class="items-center font-medium mt-2">Dimond riding a blue body art</span>
+                    <div>
+                        <div class="flex flex-row justify-between my-4 items-center">                            
+                            <div class="flex flex-col sm:flex-row">
+                                <img class="bg-black rounded-full w-9 h-9" src="/images/bidding-user.png" alt="">
+                                <div class="flex flex-col sm:ml-2">
+                                    <span class="text-sm font-bold">JackR</span>      
+                                    <span class="text-sm">&#64;jackr</span>  
+                                </div>                        
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-sm font-bold">0.568ETH</span>
+                                <span class="text-sm">Current Bid</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-row justify-between items-center">
+                        <span class="text-sm">12+ Place Bid.</span>
+                        <button class="border-gold  p-1 px-2 rounded-md bg-gold text-black font-normal text-sm">New</button>
+                    </div>
+                </div>
+                <div class="text-bidtxt border-cardbord border-x-2 border-y-2 bg-card h-fit w-fit p-5 py-4 rounded-md relative bid mb-3 mr-2">
+                    <img class="h-52 w-52 object-cover sm:ml-2 rounded-lg"  src="/images/item-bg-3.jpg" alt="">
+                    <div class="absolute flex flex-col p-2 sm:px-4 top-6 items-center">
+                        <div class="flex flex-row justify-around items-center">
+                            <ion-icon class="bg-transparent h-7 w-7 fill-gold rounded-full border-gold border-x-0 border-y-0" name="ellipsis-horizontal-circle-sharp"></ion-icon>
+                            <ion-icon class="ml-24 sm:ml-16 md:ml-32 border-bott rounded-full border-x-8 border-y-8 bg-bott hover:fill-red-600 heart"  name="heart"></ion-icon></div>
+                        <button class="mt-14 border-x-2 border-y-2 p-2 bg-gold border-gold text-gray-700 opacity-0 place rounded-lg">Place Bid</button>
+                    </div>
+                    
+                    <span class="items-center font-medium">Dimond riding a blue body art</span>
+                    <div>
+                        <div class="flex flex-row justify-between my-4 items-center">                            
+                            <div class="flex flex-col sm:flex-row">
+                                <img class="bg-black rounded-full w-9 h-9" src="/images/bidding-user.png" alt="">
+                                <div class="flex flex-col sm:ml-2">
+                                    <span class="text-sm font-bold">JackR</span>      
+                                    <span class="text-sm">&#64;jackr</span>  
+                                </div>                        
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-sm font-bold">0.568ETH</span>
+                                <span class="text-sm">Current Bid</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-row justify-between items-center">
+                        <span class="text-sm">12+ Place Bid.</span>
+                        <button class="border-gold  p-1 px-2 rounded-md bg-gold text-black font-normal text-sm">New</button>
+                    </div>
+                </div>
+                <div class="text-bidtxt border-cardbord border-x-2 border-y-2 bg-card h-fit w-fit p-5 py-4 rounded-md relative bid mb-3 mr-2">
+                    <img class="h-52 w-52 object-cover sm:ml-2 rounded-lg"  src="/images/item-bg-4.jpg" alt="">
+                    <div class="absolute flex flex-col p-2 sm;px-4 top-6 items-center">
+                        <div class="flex flex-row justify-around items-center">
+                            <ion-icon class="bg-transparent h-7 w-7 fill-gold rounded-full border-gold border-x-0 border-y-0" name="ellipsis-horizontal-circle-sharp"></ion-icon>
+                            <ion-icon class="ml-24 sm:ml-16 md:ml-32 border-bott rounded-full border-x-8 border-y-8 bg-bott hover:fill-red-600 heart"  name="heart"></ion-icon></div>
+                        <button class="mt-14 border-x-2 border-y-2 p-2 bg-gold border-gold text-gray-700 opacity-0 place rounded-lg">Place Bid</button>
+                    </div>
+                     
+                    <span class="items-center font-medium">Dimond riding a blue body art</span>
+                    <div>
+                        <div class="flex flex-row justify-between my-4 items-center">                            
+                            <div class="flex flex-col sm:flex-row">
+                                <img class="bg-black rounded-full w-9 h-9" src="/images/bidding-user.png" alt="">
+                                <div class="flex flex-col sm:ml-2">
+                                    <span class="text-sm font-bold">JackR</span>      
+                                    <span class="text-sm">&#64;jackr</span>  
+                                </div>                        
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-sm font-bold">0.568ETH</span>
+                                <span class="text-sm">Current Bid</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-row justify-between items-center">
+                        <span class="text-sm">12+ Place Bid.</span>
+                        <button class="border-gold  p-1 px-2 rounded-md bg-gold text-black font-normal text-sm">New</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="p-24 flex flex-col mb-16">
+            <div><span class="flex justify-center text-4xl font-medium">Create and sell your NFTs</span></div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  sm:px-36 my-4 py-4">
+                <div class="border-border bg-border h-fit w-fit p-4 relative rounded-md create m-4">
+                    <span class="absolute border-border border-x-8 border-y-8  rounded-md p-2 px-6 top-2 left-2 bg-bott text-cardbord text-lg font-bold create-num">01</span>
+                    <div class="border-card border-x-2 border-y-2 p-3 rounded-md pt-20 flex flex-col items-center">
+                        <img src="/images/single-create-sell-item-1.png" alt="">
+                        <span class="my-4 text-lg font-medium create-text">Set up Your Wallet</span>
+                        <span class="text-sm text-bidtxt text-center">There are many variations of passagi Ipsum available but the majorty have
+                            eration in some
+                            form, by injected</span>
+                    </div>
+                </div>
+                <div class="border-border bg-border h-fit w-fit p-4 relative rounded-md create m-4">
+                    <span class="absolute border-border border-x-8 border-y-8  rounded-md p-2 px-6 top-2 left-2 bg-bott text-cardbord text-lg font-bold create-num">02</span>
+                    <div class="border-card border-x-2 border-y-2 p-3 rounded-md pt-20 flex flex-col items-center">
+                        <img src="/images/single-create-sell-item-1.png" alt="">
+                        <span class="my-4 text-base font-medium create-text">Create Your Collection</span>
+                        <span class="text-sm text-bidtxt text-center">There are many variations of passagi Ipsum available but the majorty have
+                            eration in some
+                            form, by injected</span>
+                    </div>
+                </div>
+                <div class="border-border bg-border h-fit w-fit p-4 relative rounded-md create m-4">
+                    <span class="absolute border-border border-x-8 border-y-8  rounded-md p-2 px-6 top-2 left-2 bg-bott text-cardbord text-lg font-bold create-num">03</span>
+                    <div class="border-card border-x-2 border-y-2 p-3 rounded-md pt-20 flex flex-col items-center">
+                        <img src="/images/single-create-sell-item-1.png" alt="">
+                        <span class="my-4 text-lg font-medium create-text">Add Your NFT's</span>
+                        <span class="text-sm text-bidtxt text-center">There are many variations of passagi Ipsum available but the majorty have
+                            eration in some
+                            form, by injected</span>
+                    </div>
+                </div>
+                <div class="border-border bg-border h-fit w-fit p-4 relative rounded-md create m-4">
+                    <span class="absolute border-border border-x-8 border-y-8  rounded-md p-2 px-6 top-2 left-2 bg-bott text-cardbord text-lg font-bold create-num">04</span>
+                    <div class="border-card border-x-2 border-y-2 p-3 rounded-md pt-20 flex flex-col items-center">
+                        <img src="/images/single-create-sell-item-1.png" alt="">
+                        <span class="my-4 text-lg font-medium create-text">Sell Your NFT's</span>
+                        <span class="text-sm text-bidtxt text-center">There are many variations of passagi Ipsum available but the majorty have
+                            eration in some
+                            form, by injected</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="w-full h-auto bg-border pb-24">
+            
+            <div class="py-20 px-24 flex flex-col sm:flex-row justify-between">
+                <span class="text-4xl text-center font-bold">Explore Product</span>
+                <button type="button" class="border-gold border-y-2 border-x-2 py-3 px-4 rounded-lg hover:bg-gold hover:text-black font-medium  m-2">EXPLORE</button>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 px-20 sm:px-36 py-4 items-center">
+                <div class="text-bidtxt border-cardbord border-x-2 border-y-2 bg-card h-fit w-fit p-5 py-4 rounded-md relative bid mb-3 mr-2">
+                    <img class="h-52 w-52 object-cover sm:ml-2 rounded-lg"  src="/images/explore-product-1.jpg" alt="">
+                    <div class="absolute flex flex-col p-2 sm:px-4 top-6 items-center">
+                        <div class="flex flex-row justify-around items-center">
+                            <ion-icon class="bg-transparent h-7 w-7 fill-gold rounded-full border-gold border-x-0 border-y-0" name="ellipsis-horizontal-circle-sharp"></ion-icon>
+                            <ion-icon class="ml-24 sm:ml-16 md:ml-32 lg: border-bott rounded-full border-x-8 border-y-8 bg-bott hover:fill-red-600 heart"  name="heart"></ion-icon></div>
+                        <button class="mt-14 border-x-2 border-y-2 p-2 bg-gold border-gold text-gray-700 opacity-0 place rounded-lg">Place Bid</button>
+                    </div>
+                    
+                    <span class="items-center font-medium">Dimond riding a blue body art</span>
+                    <div>
+                        <div class="flex flex-row justify-between my-4 items-center">                            
+                            <div class="flex flex-col sm:flex-row">
+                                <img class="bg-black rounded-full w-9 h-9" src="/images/bidding-user.png" alt="">
+                                <div class="flex flex-col sm:ml-2">
+                                    <span class="text-sm font-bold">JackR</span>      
+                                    <span class="text-sm">&#64;jackr</span>  
+                                </div>                        
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-sm font-bold">0.568ETH</span>
+                                <span class="text-sm">Current Bid</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-row justify-between items-center">
+                        <span class="text-sm">12+ Place Bid.</span>
+                        <button class="border-gold  p-1 px-2 rounded-md bg-gold text-black font-normal text-sm">New</button>
+                    </div>
+                </div>
+                <div class="text-bidtxt border-cardbord border-x-2 border-y-2 bg-card h-fit w-fit p-5 py-4 rounded-md relative bid mb-3 mr-2">
+                    <img class="h-52 w-52 object-cover sm:ml-2 rounded-lg"  src="/images/explore-product-2.jpg" alt="">
+                    <div class="absolute flex flex-col p-2 sm:px-4 top-6 items-center">
+                        <div class="flex flex-row justify-around items-center">
+                            <ion-icon class="bg-transparent h-7 w-7 fill-gold rounded-full border-gold border-x-0 border-y-0" name="ellipsis-horizontal-circle-sharp"></ion-icon>
+                            <ion-icon class="ml-24 sm:ml-16 md:ml-32 border-bott rounded-full border-x-8 border-y-8 bg-bott hover:fill-red-600 heart"  name="heart"></ion-icon></div>
+                        <button class="mt-14 border-x-2 border-y-2 p-2 bg-gold border-gold text-gray-700 opacity-0 place rounded-lg">Place Bid</button>
+                    </div>
+                    
+                    <span class="items-center font-medium">Dimond riding a blue body art</span>
+                    <div>
+                        <div class="flex flex-row justify-between my-4 items-center">                            
+                            <div class="flex flex-col sm:flex-row">
+                                <img class="bg-black rounded-full w-9 h-9" src="/images/bidding-user.png" alt="">
+                                <div class="flex flex-col sm:ml-2">
+                                    <span class="text-sm font-bold">JackR</span>      
+                                    <span class="text-sm">&#64;jackr</span>  
+                                </div>                        
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-sm font-bold">0.568ETH</span>
+                                <span class="text-sm">Current Bid</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-row justify-between items-center">
+                        <span class="text-sm">12+ Place Bid.</span>
+                        <button class="border-gold  p-1 px-2 rounded-md bg-gold text-black font-normal text-sm">New</button>
+                    </div>
+                </div>
+                <div class="text-bidtxt border-cardbord border-x-2 border-y-2 bg-card h-fit w-fit p-5 py-4 rounded-md relative bid mb-3 mr-2">
+                    <img class="h-52 w-52 object-cover sm:ml-2 rounded-lg"  src="/images/explore-product-3.jpg" alt="">
+                    <div class="absolute flex flex-col p-2 sm:px-4 top-6 items-center">
+                        <div class="flex flex-row justify-around items-center">
+                            <ion-icon class="bg-transparent h-7 w-7 fill-gold rounded-full border-gold border-x-0 border-y-0" name="ellipsis-horizontal-circle-sharp"></ion-icon>
+                            <ion-icon class="ml-24 sm:ml-16 md:ml-32 border-bott rounded-full border-x-8 border-y-8 bg-bott hover:fill-red-600 heart"  name="heart"></ion-icon></div>
+                        <button class="mt-14 border-x-2 border-y-2 p-2 bg-gold border-gold text-gray-700 opacity-0 place rounded-lg">Place Bid</button>
+                    </div>
+                    
+                    <span class="items-center font-medium">Dimond riding a blue body art</span>
+                    <div>
+                        <div class="flex flex-row justify-between my-4 items-center">                            
+                            <div class="flex flex-col sm:flex-row">
+                                <img class="bg-black rounded-full w-9 h-9" src="/images/bidding-user.png" alt="">
+                                <div class="flex flex-col sm:ml-2">
+                                    <span class="text-sm font-bold">JackR</span>      
+                                    <span class="text-sm">&#64;jackr</span>  
+                                </div>                        
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-sm font-bold">0.568ETH</span>
+                                <span class="text-sm">Current Bid</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-row justify-between items-center">
+                        <span class="text-sm">12+ Place Bid.</span>
+                        <button class="border-gold  p-1 px-2 rounded-md bg-gold text-black font-normal text-sm">New</button>
+                    </div>
+                </div>
+                <div class="text-bidtxt border-cardbord border-x-2 border-y-2 bg-card h-fit w-fit p-5 py-4 rounded-md relative bid mb-3 mr-2">
+                    <img class="h-52 w-52 object-cover sm:ml-2 rounded-lg"  src="/images/explore-product-4.jpg" alt="">
+                    <div class="absolute flex flex-col p-2 sm:px-4 top-6 items-center">
+                        <div class="flex flex-row justify-around items-center">
+                            <ion-icon class="bg-transparent h-7 w-7 fill-gold rounded-full border-gold border-x-0 border-y-0" name="ellipsis-horizontal-circle-sharp"></ion-icon>
+                            <ion-icon class="ml-24 sm:ml-16 md:ml-32 border-bott rounded-full border-x-8 border-y-8 bg-bott hover:fill-red-600 heart"  name="heart"></ion-icon></div>
+                        <button class="mt-14 border-x-2 border-y-2 p-2 bg-gold border-gold text-gray-700 opacity-0 place rounded-lg">Place Bid</button>
+                    </div>
+                    
+                    <span class="items-center font-medium">Dimond riding a blue body art</span>
+                    <div>
+                        <div class="flex flex-row justify-between my-4 items-center">                            
+                            <div class="flex flex-col sm:flex-row">
+                                <img class="bg-black rounded-full w-9 h-9" src="/images/bidding-user.png" alt="">
+                                <div class="flex flex-col sm:ml-2">
+                                    <span class="text-sm font-bold">JackR</span>      
+                                    <span class="text-sm">&#64;jackr</span>  
+                                </div>                        
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-sm font-bold">0.568ETH</span>
+                                <span class="text-sm">Current Bid</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-row justify-between items-center">
+                        <span class="text-sm">12+ Place Bid.</span>
+                        <button class="border-gold  p-1 px-2 rounded-md bg-gold text-black font-normal text-sm">New</button>
+                    </div>
+                </div>
+                <div class="text-bidtxt border-cardbord border-x-2 border-y-2 bg-card h-fit w-fit p-5 py-4 rounded-md relative bid mb-3 mr-2">
+                    <img class="h-52 w-52 object-cover sm:ml-2 rounded-lg"  src="/images/explore-product-5.jpg" alt="">
+                    <div class="absolute flex flex-col p-2 sm:px-4 top-6 items-center">
+                        <div class="flex flex-row justify-around items-center">
+                            <ion-icon class="bg-transparent h-7 w-7 fill-gold rounded-full border-gold border-x-0 border-y-0" name="ellipsis-horizontal-circle-sharp"></ion-icon>
+                            <ion-icon class="ml-24 sm:ml-16 md:ml-32 lg: border-bott rounded-full border-x-8 border-y-8 bg-bott hover:fill-red-600 heart"  name="heart"></ion-icon></div>
+                        <button class="mt-14 border-x-2 border-y-2 p-2 bg-gold border-gold text-gray-700 opacity-0 place rounded-lg">Place Bid</button>
+                    </div>
+                    
+                    <span class="items-center font-medium">Dimond riding a blue body art</span>
+                    <div>
+                        <div class="flex flex-row justify-between my-4 items-center">                            
+                            <div class="flex flex-col sm:flex-row">
+                                <img class="bg-black rounded-full w-9 h-9" src="/images/bidding-user.png" alt="">
+                                <div class="flex flex-col sm:ml-2">
+                                    <span class="text-sm font-bold">JackR</span>      
+                                    <span class="text-sm">&#64;jackr</span>  
+                                </div>                        
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-sm font-bold">0.568ETH</span>
+                                <span class="text-sm">Current Bid</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-row justify-between items-center">
+                        <span class="text-sm">12+ Place Bid.</span>
+                        <button class="border-gold  p-1 px-2 rounded-md bg-gold text-black font-normal text-sm">New</button>
+                    </div>
+                </div>
+                <div class="text-bidtxt border-cardbord border-x-2 border-y-2 bg-card h-fit w-fit p-5 py-4 rounded-md relative bid mb-3 mr-2">
+                    <img class="h-52 w-52 object-cover sm:ml-2 rounded-lg"  src="/images/explore-product-6.jpg" alt="">
+                    <div class="absolute flex flex-col p-2 sm:px-4 top-6 items-center">
+                        <div class="flex flex-row justify-around items-center">
+                            <ion-icon class="bg-transparent h-7 w-7 fill-gold rounded-full border-gold border-x-0 border-y-0" name="ellipsis-horizontal-circle-sharp"></ion-icon>
+                            <ion-icon class="ml-24 sm:ml-16 md:ml-32 lg: border-bott rounded-full border-x-8 border-y-8 bg-bott hover:fill-red-600 heart"  name="heart"></ion-icon></div>
+                        <button class="mt-14 border-x-2 border-y-2 p-2 bg-gold border-gold text-gray-700 opacity-0 place rounded-lg">Place Bid</button>
+                    </div>
+                    
+                    <span class="items-center font-medium">Dimond riding a blue body art</span>
+                    <div>
+                        <div class="flex flex-row justify-between items-center my-4">                            
+                            <div class="flex flex-col sm:flex-row">
+                                <img class="bg-black rounded-full w-9 h-9" src="/images/bidding-user.png" alt="">
+                                <div class="flex flex-col sm:ml-2">
+                                    <span class="text-sm font-bold">JackR</span>      
+                                    <span class="text-sm">&#64;jackr</span>  
+                                </div>                        
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-sm font-bold">0.568ETH</span>
+                                <span class="text-sm">Current Bid</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-row justify-between items-center">
+                        <span class="text-sm">12+ Place Bid.</span>
+                        <button class="border-gold  p-1 px-2 rounded-md bg-gold text-black font-normal text-sm">New</button>
+                    </div>
+                </div>
+                <div class="text-bidtxt border-cardbord border-x-2 border-y-2 bg-card h-fit w-fit p-5 py-4 rounded-md relative bid mb-3 mr-2">
+                    <img class="h-52 w-52 object-cover sm:ml-2 rounded-lg"  src="/images/explore-product-7.jpg" alt="">
+                    <div class="absolute flex flex-col p-2 sm:px-4 top-6 items-center">
+                        <div class="flex flex-row justify-around items-center">
+                            <ion-icon class="bg-transparent h-7 w-7 fill-gold rounded-full border-gold border-x-0 border-y-0" name="ellipsis-horizontal-circle-sharp"></ion-icon>
+                            <ion-icon class="ml-24 sm:ml-16 md:ml-32 lg: border-bott rounded-full border-x-8 border-y-8 bg-bott hover:fill-red-600 heart"  name="heart"></ion-icon></div>
+                        <button class="mt-14 border-x-2 border-y-2 p-2 bg-gold border-gold text-gray-700 opacity-0 place rounded-lg">Place Bid</button>
+                    </div>
+                    
+                    <span class="items-center font-medium">Dimond riding a blue body art</span>
+                    <div>
+                        <div class="flex flex-row justify-between my-4 items-center">                            
+                            <div class="flex flex-col sm:flex-row">
+                                <img class="bg-black rounded-full w-9 h-9" src="/images/bidding-user.png" alt="">
+                                <div class="flex flex-col sm:ml-2">
+                                    <span class="text-sm font-bold">JackR</span>      
+                                    <span class="text-sm">&#64;jackr</span>  
+                                </div>                        
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-sm font-bold">0.568ETH</span>
+                                <span class="text-sm">Current Bid</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-row justify-between items-center">
+                        <span class="text-sm">12+ Place Bid.</span>
+                        <button class="border-gold  p-1 px-2 rounded-md bg-gold text-black font-normal text-sm">New</button>
+                    </div>
+                </div>
+                <div class="text-bidtxt border-cardbord border-x-2 border-y-2 bg-card h-fit w-fit p-5 py-4 rounded-md relative bid mb-3 mr-2">
+                    <img class="h-52 w-52 object-cover sm:ml-2rounded-lg"  src="/images/explore-product-8.jpg" alt="">
+                    <div class="absolute flex flex-col p-2 sm:px-4 top-6 items-center">
+                        <div class="flex flex-row justify-around items-center">
+                            <ion-icon class="bg-transparent h-7 w-7 fill-gold rounded-full border-gold border-x-0 border-y-0" name="ellipsis-horizontal-circle-sharp"></ion-icon>
+                            <ion-icon class="ml-24 sm:ml-16 md:ml-32 lg: border-bott rounded-full border-x-8 border-y-8 bg-bott hover:fill-red-600 heart"  name="heart"></ion-icon></div>
+                        <button class="mt-14 border-x-2 border-y-2 p-2 bg-gold border-gold text-gray-700 opacity-0 place rounded-lg">Place Bid</button>
+                    </div>
+                    
+                    <span class="items-center font-medium">Dimond riding a blue body art</span>
+                    <div>
+                        <div class="flex flex-row justify-between my-4 items-center">                            
+                            <div class="flex flex-col sm:flex-row">
+                                <img class="bg-black rounded-full w-9 h-9" src="/images/bidding-user.png" alt="">
+                                <div class="flex flex-col sm:ml-2">
+                                    <span class="text-sm font-bold">JackR</span>      
+                                    <span class="text-sm">&#64;jackr</span>  
+                                </div>                        
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-sm font-bold">0.568ETH</span>
+                                <span class="text-sm">Current Bid</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-row justify-between items-center">
+                        <span class="text-sm">12+ Place Bid.</span>
+                        <button class="border-gold  p-1 px-2 rounded-md bg-gold text-black font-normal text-sm">New</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class=" sm:p-20 pad">
+            <div class="text-4xl font-bold flex flex-row items-center">
+                <span>Top seller in <span class="text-gold">1</span> day </span>
+                <ion-icon name="chevron-down-outline" class="m-1 pt-2"></ion-icon>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 pad1 py-14">
+                <div class="h-fit w-fit border-border bg-border  rounded-md relative p-3 m-2 profile">
+                    <div class=" border-card border-x-2 border-y-2  rounded-md flex flex-col py-4 seller">
+                        <span class="absolute top-2 right-2 border-border border-x-4 border-y-4 rounded-tr-lg px-2 py-1  bg-bott text-cardbord text-sm font-bold seller-num">01</span>
+                        <div class="flex flex-row items-center justify-start w-56 h-16 px-3">
+                            <div class="relative"><img class="w-16 h-16  bg-black rounded-full " src="/images/seller-01.png" alt="">
+                                <ion-icon class="absolute fill-gold right-0 bottom-0"  name="checkmark-circle-sharp"></ion-icon>
+                            </div>
+                            <div class="flex flex-col pl-4 ">
+                                <span class="text-base text-bidtxt font-semibold seller-name">Brodband</span>
+                                <span class="text-bidtxt text-xs font-medium">&#36;2500,000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="h-fit w-fit border-border bg-border  rounded-md relative p-3 m-2 profile">
+                    <div class=" border-card border-x-2 border-y-2  rounded-md flex flex-col py-4 seller">
+                        <span class="absolute top-2 right-2 border-border border-x-4 border-y-4 rounded-tr-lg px-2 py-1  bg-bott text-cardbord text-sm font-bold seller-num">02</span>
+                        <div class="flex flex-row items-center justify-start w-56 h-16 px-3">
+                            <div><img class="w-16 h-16  bg-black rounded-full " src="/images/seller-02.png" alt="">
+                            </div>
+                            <div class="flex flex-col pl-4 ">
+                                <span class="text-base text-bidtxt font-semibold seller-name">Alexander</span>
+                                <span class="text-bidtxt text-xs font-medium">&#36;2500,000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="h-fit w-fit border-border bg-border  rounded-md relative p-3 m-2 profile">
+                    <div class=" border-card border-x-2 border-y-2  rounded-md flex flex-col py-4 seller">
+                        <span class="absolute top-2 right-2 border-border border-x-4 border-y-4 rounded-tr-lg px-2 py-1  bg-bott text-cardbord text-sm font-bold seller-num">03</span>
+                        <div class="flex flex-row items-center justify-start w-56 h-16 px-3">
+                            <div><img class="w-16 h-16  bg-black rounded-full " src="/images/seller-03.png" alt="">
+                            </div>
+                            <div class="flex flex-col pl-4 ">
+                                <span class="text-base text-bidtxt font-semibold seller-name">William Jeck</span>
+                                <span class="text-bidtxt text-xs font-medium">&#36;2500,000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="h-fit w-fit border-border bg-border  rounded-md relative p-3 m-2 profile">
+                    <div class=" border-card border-x-2 border-y-2  rounded-md flex flex-col py-4 seller">
+                        <span class="absolute top-2 right-2 border-border border-x-4 border-y-4  rounded-tr-lg px-2 py-1  bg-bott text-cardbord text-sm font-bold seller-num">04</span>
+                        <div class="flex flex-row items-center justify-start w-56 h-16 px-3">
+                            <div ><img class="w-16 h-16  bg-black rounded-full " src="/images/seller-01.png" alt="">
+                            </div>
+                            <div class="flex flex-col pl-4 ">
+                                <span class="text-base text-bidtxt font-semibold seller-name">Henry John</span>
+                                <span class="text-bidtxt text-xs font-medium">&#36;2500,000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="h-fit w-fit border-border bg-border  rounded-md relative p-3 m-2 profile">
+                    <div class=" border-card border-x-2 border-y-2  rounded-md flex flex-col py-4 seller">
+                        <span class="absolute top-2 right-2 border-border border-x-4 border-y-4 rounded-tr-lg px-2 py-1  bg-bott text-cardbord text-sm font-bold seller-num">05</span>
+                        <div class="flex flex-row items-center justify-start w-56 h-16 px-3">
+                            <div class="relative"><img class="w-16 h-16  bg-black rounded-full " src="/images/seller-01.png" alt="">
+                                <ion-icon class="absolute fill-gold right-0 bottom-0"  name="checkmark-circle-sharp"></ion-icon>
+                            </div>
+                            <div class="flex flex-col pl-4 ">
+                                <span class="text-sm text-bidtxt font-bold seller-name">James Thomas</span>
+                                <span class="text-bidtxt text-xs font-medium">&#36;2500,000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="h-fit w-fit border-border bg-border  rounded-md relative p-3 m-2 profile">
+                    <div class=" border-card border-x-2 border-y-2  rounded-md flex flex-col py-4 seller">
+                        <span class="absolute top-2 right-2 border-border border-x-4 border-y-4 rounded-tr-lg px-2 py-1  bg-bott text-cardbord text-sm font-bold seller-num">06</span>
+                        <div class="flex flex-row items-center justify-start w-56 h-16 px-3">
+                            <div><img class="w-16 h-16  bg-black rounded-full " src="/images/seller-01.png" alt="">
+                            </div>
+                            <div class="flex flex-col pl-4 ">
+                                <span class="text-sm text-bidtxt font-bold seller-name">Anthoy Roy</span>
+                                <span class="text-bidtxt text-xs font-medium">&#36;2500,000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="h-fit w-fit border-border bg-border  rounded-md relative p-3 m-2 profile">
+                    <div class=" border-card border-x-2 border-y-2  rounded-md flex flex-col py-4 seller">
+                        <span class="absolute top-2 right-2 border-border border-x-4 border-y-4 rounded-tr-lg px-2 py-1  bg-bott text-cardbord text-sm font-bold seller-num">07</span>
+                        <div class="flex flex-row items-center justify-start w-56 h-16 px-3">
+                            <div><img class="w-16 h-16  bg-black rounded-full " src="/images/seller-01.png" alt="">
+                            </div>
+                            <div class="flex flex-col pl-4 ">
+                                <span class="text-sm text-bidtxt font-bold seller-name">Chritopher</span>
+                                <span class="text-bidtxt text-xs font-medium">&#36;2500,000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="h-fit w-fit border-border bg-border  rounded-md relative p-3 m-2 profile">
+                    <div class=" border-card border-x-2 border-y-2  rounded-md flex flex-col py-4 seller">
+                        <span class="absolute top-2 right-2 border-border border-x-4 border-y-4 rounded-tr-lg px-2 py-1  bg-bott text-cardbord text-sm font-bold seller-num">08</span>
+                        <div class="flex flex-row items-center justify-start w-56 h-16 px-3">
+                            <div><img class="w-16 h-16  bg-black rounded-full " src="/images/seller-08.png" alt="">
+                            </div>
+                            <div class="flex flex-col pl-4 ">
+                                <span class="text-sm text-bidtxt font-bold seller-name">Elijabeth Ran</span>
+                                <span class="text-bidtxt text-xs font-medium">&#36;2500,000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="h-fit w-fit border-border bg-border  rounded-md relative p-3 m-2 profile">
+                    <div class=" border-card border-x-2 border-y-2  rounded-md flex flex-col py-4 seller">
+                        <span class="absolute top-2 right-2 border-border border-x-4 border-y-4 rounded-tr-lg px-2 py-1  bg-bott text-cardbord text-sm font-bold seller-num">09</span>
+                        <div class="flex flex-row items-center justify-start w-56 h-16 px-3">
+                            <div><img class="w-16 h-16  bg-black rounded-full " src="/images/seller-01.png" alt="">
+                            </div>
+                            <div class="flex flex-col pl-4 ">
+                                <span class="text-sm text-bidtxt font-bold seller-name">Brodband HR</span>
+                                <span class="text-bidtxt text-xs font-medium">&#36;2500,000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="h-fit w-fit border-border bg-border  rounded-md relative p-3 m-2 profile">
+                    <div class=" border-card border-x-2 border-y-2  rounded-md flex flex-col py-4 seller">
+                        <span class="absolute top-2 right-2 border-border border-x-4 border-y-4 rounded-tr-lg px-2 py-1  bg-bott text-cardbord text-sm font-bold seller-num">10</span>
+                        <div class="flex flex-row items-center justify-start w-56 h-16 px-3">
+                            <div class="relative"><img class="w-16 h-16  bg-black rounded-full " src="/images/seller-02.png" alt="">
+                                <ion-icon class="absolute fill-gold right-0 bottom-0"  name="checkmark-circle-sharp"></ion-icon>
+                            </div>
+                            <div class="flex flex-col pl-4 ">
+                                <span class="text-sm text-bidtxt font-bold seller-name">Michel Raw</span>
+                                <span class="text-bidtxt text-xs font-medium">&#36;2500,000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="h-fit w-fit border-border bg-border  rounded-md relative p-3 m-2 profile">
+                    <div class=" border-card border-x-2 border-y-2  rounded-md flex flex-col py-4 seller">
+                        <span class="absolute top-2 right-2 border-border border-x-4 border-y-4 rounded-tr-lg px-2 py-1  bg-bott text-cardbord text-sm font-bold seller-num">11</span>
+                        <div class="flex flex-row items-center justify-start w-56 h-16 px-3">
+                            <div class="relative"><img class="w-16 h-16  bg-black rounded-full " src="/images/seller-03.png" alt="">
+                                <ion-icon class="absolute fill-gold right-0 bottom-0"  name="checkmark-circle-sharp"></ion-icon>
+                            </div>
+                            <div class="flex flex-col pl-4 ">
+                                <span class="text-base text-bidtxt font-semibold seller-name">Liam Dylan</span>
+                                <span class="text-bidtxt text-xs font-medium">&#36;2500,000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="h-fit w-fit border-border bg-border  rounded-md relative p-3 m-2 profile">
+                    <div class=" border-card border-x-2 border-y-2  rounded-md flex flex-col py-4 seller">
+                        <span class="absolute top-2 right-2 border-border border-x-4 border-y-4 rounded-tr-lg px-2 py-1  bg-bott text-cardbord text-sm font-bold seller-num">12</span>
+                        <div class="flex flex-row items-center justify-start w-56 h-16 px-3">
+                            <div><img class="w-16 h-16  bg-black rounded-full " src="/images/seller-04.png" alt="">
+                            </div>
+                            <div class="flex flex-col pl-4 ">
+                                <span class="text-base text-bidtxt font-semibold seller-name">Thomas Jar</span>
+                                <span class="text-bidtxt text-xs font-medium">&#36;2500,000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <section class="h-fit py-20 bg-border text-text">
+            <section class="grid grid-cols-1 xl:grid-cols-2 px-10 sm:px-48 xl:px-20">
+                <div class="flex flex-col items-center xl:px-20">
+                    <img class="w-32 h-14 p-2"  src="/images/logo.png" alt="">
+                    <span class="w-80 p-2 leading-5 text-base">There are many variations of passages of but the majority have suffered alterations cted humour, or randomsed words which htly believable. If you are going.</span>
+                    <span class="p-2 text-white text-lg font-semibold">Join the community</span>
+                    <div class="flex flex-row p-1">
+                        <ion-icon class="m-2 w-5 h-5 p-1 rounded-full fill-text bg-card border-card border-y-4 border-x-4 high"  name="logo-github"></ion-icon>
+                        <ion-icon  class="m-2 w-5 h-5 p-1 rounded-full fill-text bg-card border-card border-y-4 border-x-4 high" name="logo-twitter"></ion-icon>
+                        <ion-icon  class="m-2 w-5 h-5 p-1 rounded-full fill-text bg-card border-card border-y-4 border-x-4 high" name="logo-instagram"></ion-icon>
+                        <ion-icon  class="m-2 w-5 h-5 p-1 rounded-full fill-text bg-card border-card border-y-4 border-x-4 high" name="logo-youtube"></ion-icon>
+                    </div>
+                </div>
+                <div class="flex flex-col sm:flex-row footer1">
+                    <div class="flex flex-col mx-2">
+                        <span class="text-white font-semibold text-2xl my-4 sm:mb-8">Marketplace</span>
+                        <div class="flex flex-row items-center foot hover:ml-1">
+                            <ion-icon class="foot-symbol" name="play-circle-outline"></ion-icon>
+                            <span class="mx-2 foot-text">Gaming</span>
+                        </div>
+                        <div class="flex flex-row items-center foot hover:ml-1">
+                            <ion-icon class="foot-symbol" name="play-circle-outline"></ion-icon>
+                            <span class="mx-2  foot-text">Product</span>
+                        </div>
+                        <div class="flex flex-row items-center foot hover:ml-1">
+                            <ion-icon class="foot-symbol" name="play-circle-outline"></ion-icon>
+                            <span class="mx-2  foot-text">All NFTs</span>
+                        </div>
+                        <div class="flex flex-row items-center foot hover:ml-1">
+                            <ion-icon class="foot-symbol" name="play-circle-outline"></ion-icon>
+                            <span class="mx-2 foot-text ">Social Network</span>
+                        </div>
+                        <div class="flex flex-row items-center foot hover:ml-1">
+                            <ion-icon class="foot-symbol" name="play-circle-outline"></ion-icon>
+                            <span class="mx-2  foot-text">Domain Names</span>
+                        </div>
+                        <div class="flex flex-row items-center foot hover:ml-1">
+                            <ion-icon class="foot-symbol" name="play-circle-outline"></ion-icon>
+                            <span class="mx-2 foot-text ">Collectibles</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-col mx-2">
+                        <span class="text-white font-semibold text-2xl my-4 sm:mb-8">Explore</span>
+                        <div class="flex flex-row items-center foot hover:ml-1">
+                            <ion-icon class="foot-symbol" name="play-circle-outline"></ion-icon>
+                            <span class="mx-2  foot-text">Featured Drops</span>
+                        </div>
+                        <div class="flex flex-row items-center foot hover:ml-1">
+                            <ion-icon class="foot-symbol" name="play-circle-outline"></ion-icon>
+                            <span class="mx-2  foot-text">Live Auctions</span>
+                        </div>
+                        <div class="flex flex-row items-center foot hover:ml-1">
+                            <ion-icon class="foot-symbol" name="play-circle-outline"></ion-icon>
+                            <span class="mx-2  foot-text">All NFTs</span>
+                        </div>
+                        <div class="flex flex-row items-center foot hover:ml-1">
+                            <ion-icon class="foot-symbol" name="play-circle-outline"></ion-icon>
+                            <span class="mx-2  foot-text">Collections</span>
+                        </div>
+                        <div class="flex flex-row items-center foot hover:ml-1">
+                            <ion-icon class="foot-symbol" name="play-circle-outline"></ion-icon>
+                            <span class="mx-2  foot-text">Top Seller</span>
+                        </div>
+                        <div class="flex flex-row items-center foot hover:ml-1">
+                            <ion-icon class="foot-symbol" name="play-circle-outline"></ion-icon>
+                            <span class="mx-2  foot-text">Items Details</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-col mx-2">
+                        <span class="text-white font-semibold text-2xl my-4 sm:mb-8">Supports</span>
+                        <div class="flex flex-row items-center foot hover:ml-1">
+                            <ion-icon class="foot-symbol" name="play-circle-outline"></ion-icon>
+                            <span class="mx-2  foot-text">Settings &#38 Privacy</span>
+                        </div>
+                        <div class="flex flex-row items-center foot hover:ml-1">
+                            <ion-icon class="foot-symbol" name="play-circle-outline"></ion-icon>
+                            <span class="mx-2  foot-text">Help &#38 Support</span>
+                        </div>
+                        <div class="flex flex-row items-center foot hover:ml-1">
+                            <ion-icon class="foot-symbol" name="play-circle-outline"></ion-icon>
+                            <span class="mx-2  foot-text">Live Auctions</span>
+                        </div>
+                        <div class="flex flex-row items-center foot hover:ml-1">
+                            <ion-icon class="foot-symbol" name="play-circle-outline"></ion-icon>
+                            <span class="mx-2  foot-text">Items Details</span>
+                        </div>
+                        <div class="flex flex-row items-center foot hover:ml-1">
+                            <ion-icon class="foot-symbol" name="play-circle-outline"></ion-icon>
+                            <span class="mx-2  foot-text">24/7 Supports</span>
+                        </div>
+                        <div class="flex flex-row items-center foot hover:ml-1">
+                            <ion-icon class="foot-symbol" name="play-circle-outline"></ion-icon>
+                            <span class="mx-2  foot-text">Blog</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <section class="bg-card sm:px-10">
+            <div class="py-8 flex flex-col sm:flex-row justify-around items-center">
+                <div class="text-text text-sm sm:text-base">
+                    <span>&#169; 2023 <span class="text-white">&#64;James_NAFT_Model</span> all rights
+                        reserved</span>
+                </div>
+                <div class="flex flex-row justify-around">
+                    <span class=" text-text hover:text-gold mx-1">Privacy Policy</span>
+                    <span class=" text-text hover:text-gold mx-1">Terms & Conditions</span>
+                </div>
+            </div>
+        </section>
+    </footer>
+    <script src="./script.js"></script>
+</body>
+
+</html>
